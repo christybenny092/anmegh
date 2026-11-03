@@ -1,0 +1,2298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sewage Treatment Plants | Solar Energy</title>
+    <meta name="description" content="Explore sewage treatment plant solutions for residential, commercial and industrial wastewater treatment.">
+
+    <!-- Same fonts as the Solar Panel page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        /* ================= ROOT ================= */
+
+        :root {
+            --blue: #4a6aac;
+            --green: #9dc664;
+            --dark: #111820;
+            --dark-2: #101820;
+            --dark-3: #0d151c;
+            --white: #ffffff;
+            --black: #15191d;
+            --gray: #788087;
+            --light: #f5f7f5;
+            --transition: .35s ease;
+        }
+
+        /* ================= RESET ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #fff;
+            color: var(--black);
+            overflow-x: hidden;
+            padding-top: 82px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            height: 82px;
+            background: #132636fa;
+            color: #fff;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: min(1200px, 92%);
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            width: 125px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .desktop-nav > a,
+        .products-link {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .desktop-nav > a:hover,
+        .products-link:hover {
+            color: var(--green);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .products-link {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .dropdown-arrow {
+            font-size: 8px;
+            transition: .3s ease;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow,
+        .nav-dropdown:focus-within .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: 50%;
+            width: 245px;
+            padding: 8px;
+            background: rgba(13,21,28,.98);
+            border: 1px solid rgba(157,198,100,.25);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translate(-50%, 10px);
+            transition: .3s ease;
+            box-shadow: 0 18px 40px rgba(0,0,0,.2);
+        }
+
+        .nav-dropdown::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 17px;
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .nav-dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translate(-50%, 0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 14px;
+            color: #fff;
+            font-size: 11px;
+            border-radius: 5px;
+            transition: .3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--green);
+            background: rgba(157,198,100,.08);
+            padding-left: 19px;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,.18);
+            background: #132636;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 22px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: var(--green);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            transition: .35s ease;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: rgba(255,255,255,.4);
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--dark);
+            border-color: #fff;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: -240px;
+            left: -150px;
+            border-radius: 50%;
+            background: rgba(74,106,172,.15);
+            filter: blur(30px);
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.02fr .98fr;
+            gap: 65px;
+            align-items: center;
+            padding-top: 60px;
+            padding-bottom: 75px;
+        }
+
+        .hero-content {
+            max-width: 610px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            line-height: 1.7;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 34px;
+            height: 2px;
+            flex-shrink: 0;
+            background: var(--green);
+        }
+
+        .hero h1 {
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            font-size: clamp(38px, 4.6vw, 65px);
+            font-weight: 600;
+            line-height: 1.13;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-content > p {
+            max-width: 540px;
+            margin-top: 24px;
+            color: rgba(255,255,255,.72);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .hero-visual {
+            position: relative;
+            min-width: 0;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            background: #26343d;
+            border-radius: 4px;
+        }
+
+        .hero-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(9,18,25,.36), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-caption {
+            position: absolute;
+            z-index: 2;
+            left: 24px;
+            bottom: 24px;
+            color: #fff;
+        }
+
+        .hero-image-caption span {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero-image-caption strong {
+            font-family: "Montserrat", sans-serif;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .hero-side-note {
+            position: absolute;
+            top: 28px;
+            right: -20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 17px 20px;
+            background: var(--green);
+            color: #fff;
+            box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        }
+
+        .hero-side-note i {
+            font-size: 22px;
+        }
+
+        .hero-side-note strong {
+            display: block;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .hero-side-note span {
+            display: block;
+            font-size: 10px;
+            opacity: .9;
+        }
+
+        /* ================= INTRODUCTION ================= */
+
+        .overview {
+            padding: 110px 0;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            align-items: center;
+            gap: 75px;
+        }
+
+        .section-label {
+            margin-bottom: 15px;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-family: "Montserrat", sans-serif;
+            color: var(--black);
+            font-size: clamp(30px, 3.5vw, 45px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.7px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+        }
+
+        .overview-copy > p,
+        .solution-copy > p {
+            margin-top: 20px;
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.95;
+        }
+
+        .overview-image {
+            position: relative;
+            padding: 0 0 24px 24px;
+        }
+
+        .overview-image::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 65%;
+            height: 65%;
+            background: var(--green);
+        }
+
+        .overview-image img {
+            position: relative;
+            z-index: 1;
+            height: 420px;
+            object-fit: cover;
+            background: #e7ece8;
+        }
+
+        .overview-image-label {
+            position: absolute;
+            z-index: 2;
+            right: -18px;
+            bottom: 45px;
+            padding: 18px 22px;
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .overview-image-label strong {
+            display: block;
+            font-family: "Montserrat", sans-serif;
+            font-size: 24px;
+        }
+
+        .overview-image-label span {
+            display: block;
+            margin-top: 4px;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .text-link:hover {
+            color: var(--green);
+            gap: 15px;
+        }
+
+        /* ================= PROCESS SECTION ================= */
+
+        .process {
+            padding: 100px 0;
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .process-heading {
+            display: grid;
+            grid-template-columns: 1fr .7fr;
+            align-items: end;
+            gap: 45px;
+            margin-bottom: 55px;
+        }
+
+        .process-heading .section-label {
+            color: var(--green);
+        }
+
+        .process-heading .section-title {
+            color: #fff;
+        }
+
+        .process-heading .section-title span {
+            color: var(--green);
+        }
+
+        .process-heading > p {
+            color: rgba(255,255,255,.62);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            border-top: 1px solid rgba(255,255,255,.16);
+            border-bottom: 1px solid rgba(255,255,255,.16);
+        }
+
+        .process-card {
+            position: relative;
+            min-width: 0;
+            padding: 32px 24px 35px;
+            border-right: 1px solid rgba(255,255,255,.13);
+            transition: background .35s ease;
+        }
+
+        .process-card:last-child {
+            border-right: 0;
+        }
+
+        .process-card:hover {
+            background: rgba(255,255,255,.035);
+        }
+
+        .process-number {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 28px;
+            color: var(--green);
+            font-family: "Montserrat", sans-serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .process-number i {
+            font-size: 22px;
+        }
+
+        .process-card h3 {
+            margin-bottom: 13px;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .process-card p {
+            color: rgba(255,255,255,.58);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        /* ================= TREATMENT SOLUTIONS ================= */
+
+        .solutions {
+            padding: 110px 0;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 75px;
+            align-items: center;
+        }
+
+        .solutions-image {
+            position: relative;
+            min-width: 0;
+        }
+
+        .solutions-image img {
+            height: 470px;
+            object-fit: cover;
+            background: #e7ece8;
+        }
+
+        .solutions-image::after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            bottom: -15px;
+            width: 42%;
+            height: 42%;
+            border-right: 4px solid var(--green);
+            border-bottom: 4px solid var(--green);
+            pointer-events: none;
+        }
+
+        .solution-copy .section-title {
+            margin-bottom: 20px;
+        }
+
+        .solution-points {
+            display: grid;
+            gap: 0;
+            margin-top: 27px;
+            border-top: 1px solid #e6e9e7;
+        }
+
+        .solution-point {
+            display: grid;
+            grid-template-columns: 43px 1fr;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 1px solid #e6e9e7;
+        }
+
+        .solution-point-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(74,106,172,.09);
+            color: var(--blue);
+            font-size: 16px;
+        }
+
+        .solution-point h3 {
+            margin-bottom: 6px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .solution-point p {
+            color: var(--gray);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* ================= APPLICATIONS ================= */
+
+        .applications {
+            padding: 95px 0 105px;
+            background: var(--light);
+        }
+
+        .applications-heading {
+            max-width: 690px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .applications-heading .section-title {
+            margin-bottom: 17px;
+        }
+
+        .applications-heading > p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .application-card {
+            position: relative;
+            min-height: 250px;
+            padding: 30px 28px;
+            background: #fff;
+            border: 1px solid #e9ece8;
+            transition: transform .35s ease, border-color .35s ease;
+        }
+
+        .application-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(74,106,172,.45);
+        }
+
+        .application-card .app-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            background: rgba(157,198,100,.17);
+            color: var(--blue);
+            font-size: 20px;
+        }
+
+        .application-card h3 {
+            margin-bottom: 12px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .application-card p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        /* ================= BENEFITS BAND ================= */
+
+        .benefits {
+            padding: 65px 0;
+            background: #fff;
+        }
+
+        .benefits-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .benefits-title .section-label {
+            margin-bottom: 10px;
+        }
+
+        .benefits-title h2 {
+            font-family: "Montserrat", sans-serif;
+            font-size: clamp(25px, 3vw, 35px);
+            line-height: 1.25;
+            font-weight: 600;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .benefit-item i {
+            margin-top: 3px;
+            color: var(--green);
+            font-size: 17px;
+        }
+
+        .benefit-item span {
+            color: #535c61;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            position: relative;
+            padding: 85px 20px;
+            overflow: hidden;
+            background: linear-gradient(110deg, #101820, #18252d);
+            text-align: center;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: -150px;
+            top: -180px;
+            border: 1px solid rgba(157,198,100,.2);
+            border-radius: 50%;
+            box-shadow: 0 0 0 45px rgba(157,198,100,.035);
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta .section-label {
+            color: var(--green);
+        }
+
+        .cta h2 {
+            max-width: 800px;
+            margin: 0 auto 17px;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        .cta p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: rgba(255,255,255,.62);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .cta .btn {
+            margin-top: 27px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            position: relative;
+            padding-top: 65px;
+            background: linear-gradient(145deg, #101820 0%, #0b1218 55%, #0d151c 100%);
+            color: #fff;
+        }
+
+       
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.45fr 1fr 1.15fr 1.15fr;
+            gap: 42px;
+            padding-bottom: 48px;
+        }
+
+        .footer-logo {
+            width: 140px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand > p {
+            max-width: 290px;
+            color: #a0a8ad;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(157,198,100,.22);
+            border-radius: 50%;
+            background: rgba(255,255,255,.045);
+            color: #b9c2c6;
+            font-size: 13px;
+            transition: .3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h3 {
+            position: relative;
+            display: inline-block;
+            margin: 5px 0 25px;
+            padding-bottom: 12px;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .footer-column a {
+            display: block;
+            width: fit-content;
+            margin-bottom: 13px;
+            color: #a0a8ad;
+            font-size: 13px;
+            line-height: 1.6;
+            transition: .3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--green);
+            transform: translateX(4px);
+        }
+
+        .footer-column p {
+            margin-bottom: 12px;
+            color: #a0a8ad;
+            font-size: 13px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-bottom {
+            min-height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 5%;
+            background: rgba(0,0,0,.28);
+            border-top: 1px solid rgba(255,255,255,.07);
+            color: #879197;
+            font-size: 12px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 1100px) {
+            .desktop-nav {
+                gap: 20px;
+            }
+
+            .hero-grid {
+                gap: 40px;
+            }
+
+            .hero-side-note {
+                right: -8px;
+            }
+
+            .overview-grid,
+            .solutions-grid {
+                gap: 45px;
+            }
+
+            .process-card {
+                padding: 28px 18px;
+            }
+
+            .footer-grid {
+                gap: 28px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .hero-image {
+                height: 360px;
+            }
+
+            .hero h1 {
+                font-size: clamp(36px, 5vw, 48px);
+            }
+
+            .overview-grid,
+            .solutions-grid {
+                gap: 35px;
+            }
+
+            .overview-image img {
+                height: 370px;
+            }
+
+            .solutions-image img {
+                height: 390px;
+            }
+
+            .process-heading {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .process-card:nth-child(2) {
+                border-right: 0;
+            }
+
+            .process-card:nth-child(-n+2) {
+                border-bottom: 1px solid rgba(255,255,255,.13);
+            }
+
+            .application-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .benefits-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* ================= MOBILE NAVIGATION ================= */
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 72px;
+            }
+
+            html {
+                scroll-padding-top: 78px;
+            }
+
+            header {
+                height: 72px;
+            }
+
+            .nav-container {
+                width: 92%;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .logo {
+                order: 0;
+            }
+
+            .logo img {
+                width: 105px;
+            }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+                order: 1;
+            }
+
+            .mobile-nav {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-height: calc(100vh - 72px);
+                padding: 8px 5% 18px;
+                overflow-y: auto;
+                background: rgba(13,21,28,.99);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(-8px);
+                transition: .3s ease;
+                border-top: 1px solid rgba(255,255,255,.08);
+            }
+
+            .mobile-nav.active {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            .mobile-nav > a,
+            .mobile-products-btn {
+                min-height: 47px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                border-bottom: 1px solid rgba(255,255,255,.08);
+            }
+
+            .mobile-products-btn {
+                width: 100%;
+                background: transparent;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                cursor: pointer;
+                text-align: left;
+            }
+
+            .mobile-products-btn i {
+                font-size: 11px;
+                transition: transform .3s ease;
+            }
+
+            .mobile-products-btn.open i {
+                transform: rotate(180deg);
+            }
+
+            .mobile-products-menu {
+                display: none;
+                padding: 4px 0 8px 15px;
+            }
+
+            .mobile-products-menu.active {
+                display: block;
+            }
+
+            .mobile-products-menu a {
+                display: block;
+                padding: 12px 0;
+                color: #b2b9bd;
+                font-size: 11px;
+                line-height: 1.5;
+            }
+
+            .mobile-products-menu a:hover {
+                color: var(--green);
+            }
+
+            /* HERO */
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-top: 65px;
+                padding-bottom: 65px;
+            }
+
+            .hero-content {
+                max-width: 650px;
+            }
+
+            .hero h1 {
+                font-size: clamp(38px, 8vw, 54px);
+                letter-spacing: -.8px;
+            }
+
+            .hero-content > p {
+                margin-top: 20px;
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                margin-top: 25px;
+            }
+
+            .hero-image {
+                height: clamp(260px, 65vw, 390px);
+            }
+
+            .hero-side-note {
+                top: 15px;
+                right: 12px;
+            }
+
+            /* OVERVIEW */
+
+            .overview {
+                padding: 75px 0;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .overview-image {
+                width: calc(100% - 10px);
+                padding-left: 12px;
+                padding-bottom: 12px;
+            }
+
+            .overview-image img {
+                height: clamp(260px, 70vw, 380px);
+            }
+
+            .overview-image-label {
+                right: -10px;
+                bottom: 25px;
+                padding: 13px 16px;
+            }
+
+            .overview-image-label strong {
+                font-size: 20px;
+            }
+
+            /* PROCESS */
+
+            .process {
+                padding: 75px 0;
+            }
+
+            .process-heading {
+                margin-bottom: 35px;
+            }
+
+            .process-card {
+                padding: 25px 18px;
+            }
+
+            /* SOLUTIONS */
+
+            .solutions {
+                padding: 75px 0;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .solutions-image {
+                order: 1;
+                margin-right: 10px;
+            }
+
+            .solution-copy {
+                order: 2;
+            }
+
+            .solutions-image img {
+                height: clamp(270px, 70vw, 390px);
+            }
+
+            /* APPLICATIONS */
+
+            .applications {
+                padding: 75px 0;
+            }
+
+            .applications-heading {
+                margin-bottom: 35px;
+            }
+
+            .application-grid {
+                gap: 15px;
+            }
+
+            .application-card {
+                min-height: 0;
+                padding: 23px 20px;
+            }
+
+            .application-card .app-icon {
+                margin-bottom: 18px;
+            }
+
+            /* BENEFITS */
+
+            .benefits {
+                padding: 55px 0;
+            }
+
+            /* CTA */
+
+            .cta {
+                padding: 70px 20px;
+            }
+
+            /* FOOTER */
+
+            footer {
+                padding-top: 52px;
+            }
+
+            .footer-grid {
+                gap: 32px 24px;
+                padding-bottom: 36px;
+            }
+
+            .footer-logo {
+                width: 125px;
+            }
+
+            .footer-column h3 {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+
+            .footer-brand > p,
+            .footer-column a,
+            .footer-column p {
+                font-size: 12px;
+            }
+        }
+
+        /* ================= SMALL MOBILE ================= */
+
+        @media (max-width: 480px) {
+            .container {
+                width: 92%;
+            }
+
+            .nav-container {
+                width: 92%;
+            }
+
+            .logo img {
+                width: 95px;
+            }
+
+            .menu-toggle {
+                width: 38px;
+                height: 38px;
+                flex-basis: 38px;
+            }
+
+            .hero-grid {
+                padding-top: 52px;
+                padding-bottom: 55px;
+                gap: 30px;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+                letter-spacing: 1.7px;
+                margin-bottom: 17px;
+            }
+
+            .hero h1 {
+                font-size: clamp(34px, 9vw, 43px);
+            }
+
+            .hero-content > p,
+            .overview-copy > p,
+            .solution-copy > p,
+            .process-heading > p,
+            .applications-heading > p,
+            .cta p {
+                font-size: 13px;
+                line-height: 1.85;
+            }
+
+            .btn {
+                padding: 13px 16px;
+                font-size: 11px;
+            }
+
+            .hero-image {
+                height: 255px;
+            }
+
+            .hero-image-caption {
+                left: 16px;
+                bottom: 17px;
+            }
+
+            .hero-image-caption strong {
+                font-size: 17px;
+            }
+
+            .hero-side-note {
+                padding: 12px 14px;
+                gap: 9px;
+            }
+
+            .hero-side-note i {
+                font-size: 17px;
+            }
+
+            .hero-side-note strong {
+                font-size: 10px;
+            }
+
+            .hero-side-note span {
+                font-size: 9px;
+            }
+
+            .section-title {
+                font-size: clamp(27px, 7vw, 34px);
+            }
+
+            .overview-image-label {
+                right: -7px;
+                padding: 11px 13px;
+            }
+
+            .overview-image-label strong {
+                font-size: 18px;
+            }
+
+            .overview-image-label span {
+                font-size: 8px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-card,
+            .process-card:nth-child(2) {
+                border-right: 0;
+                border-bottom: 1px solid rgba(255,255,255,.13);
+                padding: 24px 8px;
+            }
+
+            .process-card:last-child {
+                border-bottom: 0;
+            }
+
+            .process-number {
+                margin-bottom: 18px;
+                font-size: 23px;
+            }
+
+            .process-card h3 {
+                font-size: 15px;
+            }
+
+            .process-card p {
+                font-size: 12px;
+            }
+
+            .application-grid {
+                grid-template-columns: 1fr;
+                gap: 13px;
+            }
+
+            .application-card {
+                padding: 24px;
+            }
+
+            .application-card h3 {
+                font-size: 15px;
+            }
+
+            .application-card p {
+                font-size: 12px;
+            }
+
+            .benefits-list {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .benefit-item span {
+                font-size: 12px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 27px;
+            }
+
+            .footer-bottom {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 33px;
+            }
+
+            .hero-buttons {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .hero-image {
+                height: 225px;
+            }
+
+            .hero-side-note {
+                right: 8px;
+                top: 8px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .overview-image img,
+            .solutions-image img {
+                height: 240px;
+            }
+        }
+
+        /* ================= LARGE DESKTOP ================= */
+
+        @media (min-width: 1600px) {
+            .container,
+            .nav-container {
+                max-width: 1350px;
+            }
+
+            .hero {
+                min-height: 660px;
+            }
+
+            .hero-image {
+                height: 460px;
+            }
+        }
+
+        /* ================= ACCESSIBILITY ================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <div class="nav-container">
+
+            <a href="index.html" class="logo" aria-label="Home">
+                <img src="./images/Anmegh - Logo --1.png" alt="Anmegh Solar Energy">
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+
+                <div class="nav-dropdown">
+                    <a href="products.html" class="products-link">
+                        PRODUCTS
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <a href="solarpanel.html">SOLAR PANEL</a>
+                        <a href="waterpurifier.html">WATER PURIFIER</a>
+                        <a href="sewage.html">SEWAGE TREATMENT PLANTS</a>
+                    </div>
+                </div>
+
+                <a href="projects.html">PROJECTS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+        <!-- MOBILE NAVIGATION -->
+
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+
+            <div class="mobile-products">
+                <button class="mobile-products-btn" id="mobileProductsBtn"
+                    aria-expanded="false" aria-controls="mobileProductsMenu">
+                    <span>PRODUCTS</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mobile-products-menu" id="mobileProductsMenu">
+                    <a href="solarpanel.html">SOLAR PANEL</a>
+                    <a href="waterpurifier.html">WATER PURIFIER</a>
+                    <a href="sewage.html">SEWAGE TREATMENT PLANTS</a>
+                </div>
+            </div>
+
+            <a href="projects.html">PROJECTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+                    <div class="eyebrow">WASTEWATER MANAGEMENT SOLUTIONS</div>
+
+                    <h1>
+                        Smarter Water.
+                        <span>Cleaner Future.</span>
+                    </h1>
+
+                    <p>
+                        Efficient sewage treatment solutions designed to manage
+                        wastewater responsibly, support environmental protection
+                        and meet the needs of residential, commercial and
+                        industrial properties.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn">
+                            ENQUIRE NOW
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#treatment-process" class="btn btn-outline">
+                            OUR PROCESS
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <img src="images/sewage1.jpg"
+                            alt="Modern sewage treatment plant facility">
+
+                        <div class="hero-image-caption">
+                            <span>ENGINEERED WATER SOLUTIONS</span>
+                            <strong>Sewage Treatment Plants</strong>
+                        </div>
+                    </div>
+
+                    <div class="hero-side-note">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div>
+                            <strong>Responsible Treatment</strong>
+                            <span>Designed for efficient wastewater management</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= OVERVIEW ================= -->
+
+        <section class="overview">
+            <div class="container overview-grid">
+
+                <div class="overview-copy reveal">
+                    <div class="section-label">SEWAGE TREATMENT SOLUTIONS</div>
+
+                    <h2 class="section-title">
+                        Treat wastewater.
+                        <span>Protect our environment.</span>
+                    </h2>
+
+                    <p>
+                        Sewage Treatment Plants (STPs) are designed to treat
+                        wastewater generated by homes, apartments, commercial
+                        buildings and other facilities before it is discharged
+                        or reused for suitable purposes.
+                    </p>
+
+                    <p>
+                        A well-planned treatment system combines physical,
+                        biological and, where required, advanced treatment
+                        processes to help reduce contaminants and improve
+                        treated-water quality.
+                    </p>
+
+                    <p>
+                        The appropriate plant design depends on wastewater
+                        characteristics, daily flow, available space and the
+                        intended use of the treated water.
+                    </p>
+
+                    <a href="contact.html" class="text-link">
+                        DISCUSS YOUR REQUIREMENTS
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="overview-image reveal">
+                    <img src="images/sewage2.jpg"
+                        alt="Sewage treatment equipment and treatment tanks">
+
+                    <div class="overview-image-label">
+                        <strong>STP</strong>
+                        <span>WASTEWATER SOLUTIONS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PROCESS ================= -->
+
+        <section class="process" id="treatment-process">
+            <div class="container">
+
+                <div class="process-heading reveal">
+                    <div>
+                        <div class="section-label">THE TREATMENT PROCESS</div>
+
+                        <h2 class="section-title">
+                            A systematic approach to
+                            <span>wastewater treatment.</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Treatment stages are selected according to the plant
+                        design and wastewater requirements. Each stage has a
+                        specific role in improving water quality.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <article class="process-card reveal">
+                        <div class="process-number">
+                            01
+                            <i class="fa-solid fa-filter"></i>
+                        </div>
+
+                        <h3>Preliminary Treatment</h3>
+
+                        <p>
+                            Screens and grit removal systems help remove
+                            larger debris and unwanted materials before
+                            the wastewater enters further treatment stages.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <div class="process-number">
+                            02
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+
+                        <h3>Primary Treatment</h3>
+
+                        <p>
+                            Settling processes help separate suspended
+                            solids from wastewater, reducing the load on
+                            subsequent treatment units.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <div class="process-number">
+                            03
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+
+                        <h3>Biological Treatment</h3>
+
+                        <p>
+                            Biological processes use microorganisms to
+                            break down biodegradable organic matter under
+                            controlled treatment conditions.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <div class="process-number">
+                            04
+                            <i class="fa-solid fa-shield-water"></i>
+                        </div>
+
+                        <h3>Final Treatment</h3>
+
+                        <p>
+                            Depending on the system, filtration and
+                            disinfection may be included to meet the
+                            required treated-water quality standards.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SOLUTIONS ================= -->
+
+        <section class="solutions">
+            <div class="container solutions-grid">
+
+                <div class="solutions-image reveal">
+                    <img src="images/sewage3.jpg"
+                        alt="Sewage treatment plant installation">
+
+                </div>
+
+                <div class="solution-copy reveal">
+                    <div class="section-label">ENGINEERED FOR YOUR NEEDS</div>
+
+                    <h2 class="section-title">
+                        Treatment solutions for
+                        <span>different requirements.</span>
+                    </h2>
+
+                    <p>
+                        Every property has different wastewater volumes,
+                        operating conditions and space limitations. A suitable
+                        treatment solution should be selected after assessing
+                        these site-specific requirements.
+                    </p>
+
+                    <div class="solution-points">
+
+                        <div class="solution-point">
+                            <div class="solution-point-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+
+                            <div>
+                                <h3>Residential & Apartment Systems</h3>
+                                <p>
+                                    Solutions planned around occupancy,
+                                    daily wastewater generation and available
+                                    installation space.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="solution-point">
+                            <div class="solution-point-icon">
+                                <i class="fa-solid fa-city"></i>
+                            </div>
+
+                            <div>
+                                <h3>Commercial Facilities</h3>
+                                <p>
+                                    Wastewater treatment planning for offices,
+                                    hotels, institutions and other commercial
+                                    properties.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="solution-point">
+                            <div class="solution-point-icon">
+                                <i class="fa-solid fa-industry"></i>
+                            </div>
+
+                            <div>
+                                <h3>Industrial Applications</h3>
+                                <p>
+                                    Treatment requirements assessed according
+                                    to wastewater characteristics and applicable
+                                    discharge or reuse standards.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="contact.html" class="text-link">
+                        FIND A SUITABLE SOLUTION
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= APPLICATIONS ================= -->
+
+        <section class="applications">
+            <div class="container">
+
+                <div class="applications-heading reveal">
+                    <div class="section-label">WHERE STPs ARE USED</div>
+
+                    <h2 class="section-title">
+                        Applications across
+                        <span>different sectors.</span>
+                    </h2>
+
+                    <p>
+                        Sewage treatment systems can support a wide range of
+                        properties where wastewater needs to be treated and
+                        managed responsibly.
+                    </p>
+                </div>
+
+                <div class="application-grid">
+
+                    <article class="application-card reveal">
+                        <div class="app-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <h3>Residential Communities</h3>
+
+                        <p>
+                            Treatment solutions for individual properties,
+                            residential communities and apartment complexes.
+                        </p>
+                    </article>
+
+                    <article class="application-card reveal">
+                        <div class="app-icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+
+                        <h3>Hotels & Resorts</h3>
+
+                        <p>
+                            Wastewater management systems planned around
+                            occupancy levels and property operations.
+                        </p>
+                    </article>
+
+                    <article class="application-card reveal">
+                        <div class="app-icon">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+
+                        <h3>Educational Institutions</h3>
+
+                        <p>
+                            Suitable treatment planning for schools,
+                            colleges, campuses and institutional buildings.
+                        </p>
+                    </article>
+
+                    <article class="application-card reveal">
+                        <div class="app-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <h3>Commercial Buildings</h3>
+
+                        <p>
+                            Systems for offices, business centres and
+                            multi-use commercial developments.
+                        </p>
+                    </article>
+
+                    <article class="application-card reveal">
+                        <div class="app-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+
+                        <h3>Industrial Facilities</h3>
+
+                        <p>
+                            Treatment requirements evaluated based on
+                            wastewater composition and operating conditions.
+                        </p>
+                    </article>
+
+                    <article class="application-card reveal">
+                        <div class="app-icon">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+
+                        <h3>Healthcare Facilities</h3>
+
+                        <p>
+                            Wastewater management planning that considers
+                            facility-specific treatment and compliance needs.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BENEFITS ================= -->
+
+        <section class="benefits">
+            <div class="container benefits-inner">
+
+                <div class="benefits-title reveal">
+                    <div class="section-label">WHY PROPER TREATMENT MATTERS</div>
+
+                    <h2>
+                        Better wastewater management starts with the right system.
+                    </h2>
+                </div>
+
+                <div class="benefits-list reveal">
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Helps reduce environmental pollution when correctly designed and operated.</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Can support suitable treated-water reuse where permitted.</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Provides a structured approach to wastewater management.</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Can be planned around site space and wastewater capacity.</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Supports responsible operation and maintenance practices.</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Helps address applicable treatment and discharge requirements.</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta">
+            <div class="container cta-inner reveal">
+
+                <div class="section-label">LET'S DISCUSS YOUR PROJECT</div>
+
+                <h2>
+                    Looking for a sewage treatment solution?
+                </h2>
+
+                <p>
+                    Tell us about your property, wastewater requirements
+                    and project needs. We can discuss the next steps for
+                    identifying a suitable treatment solution.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    CONTACT OUR TEAM
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <img src="./images/Anmegh - Logo --1.png"
+                        class="footer-logo" alt="Anmegh Solar Energy">
+
+                    <p>
+                        Solar energy, water purification and wastewater
+                        treatment solutions for a cleaner and more
+                        sustainable future.
+                    </p>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>PRODUCTS</h3>
+                    <a href="solarpanel.html">Solar Panel</a>
+                    <a href="waterpurifier.html">Water Purifier</a>
+                    <a href="sewage.html">Sewage Treatment Plants</a>
+                </div>
+
+                
+<div class="footer-column">
+    <h3>CONTACT</h3>
+
+    <p>
+        <a href="mailto:tinyt@interactive.com">
+            anmeghmep@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <a href="tel:+7994112224">
+            +7994112224
+        </a>
+    </p>
+
+    <p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Opposite+HP+Petrol+Pump+Palakkattuthazham+Perumbavoor+Ernakulam+Kerala"
+           target="_blank"
+           rel="noopener noreferrer">
+            Opposite HP Petrol Pump Palakkattuthazham Perumbavoor <br>Ernakulam Kerala
+        </a>
+    </p>
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+             Designed and Developed by tinyt interactive. © All rights reserved to Anmegh MEP Solutions
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileNav = document.getElementById("mobileNav");
+        const mobileProductsBtn = document.getElementById("mobileProductsBtn");
+        const mobileProductsMenu = document.getElementById("mobileProductsMenu");
+
+        function closeMobileMenu() {
+            mobileNav.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+            const icon = menuToggle.querySelector("i");
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mobileNav.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            const icon = menuToggle.querySelector("i");
+            icon.classList.toggle("fa-bars", !isOpen);
+            icon.classList.toggle("fa-xmark", isOpen);
+        });
+
+        mobileProductsBtn.addEventListener("click", () => {
+            const isOpen = mobileProductsMenu.classList.toggle("active");
+
+            mobileProductsBtn.classList.toggle("open", isOpen);
+            mobileProductsBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMobileMenu);
+        });
+
+        document.addEventListener("click", event => {
+            if (
+                window.innerWidth <= 767 &&
+                mobileNav.classList.contains("active") &&
+                !mobileNav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 767) {
+                closeMobileMenu();
+                mobileProductsMenu.classList.remove("active");
+                mobileProductsBtn.classList.remove("open");
+                mobileProductsBtn.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        /* Scroll reveal animation */
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    } else {
+                        entry.target.classList.remove("active");
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            revealElements.forEach(element => observer.observe(element));
+        } else {
+            revealElements.forEach(element => element.classList.add("active"));
+        }
+    </script>
+
+</body>
+</html>
